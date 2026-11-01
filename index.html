@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MATHCOUNTS Coundown Round</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<main class="round-page">
+
+		<div class="auditorium" aria-label="An auditorium with a lit stage">
+			<div class="stage-lights" aria-hidden="true">
+				<span class="light-beam light-beam-left"></span>
+				<span class="light-beam light-beam-right"></span>
+			</div>
+			<div class="curtain-valance" aria-hidden="true"></div>
+			<div class="curtain-side curtain-side-left" aria-hidden="true"></div>
+			<div class="curtain-side curtain-side-right" aria-hidden="true"></div>
+
+			<section id="mode-menu" class="projection-screen mode-menu" aria-labelledby="mode-heading">
+				<h2 id="mode-heading">Choose a mode</h2>
+				<p class="elimination-rules">Beat 11 rivals in best-of-three matches.</p>
+				<fieldset class="mode-options">
+					<legend class="visually-hidden">Round mode</legend>
+					<label class="mode-option">
+						<input type="radio" name="mode" value="hard" checked>
+						<span class="mode-title">Hard</span>
+					</label>
+					<label class="mode-option">
+						<input type="radio" name="mode" value="normal">
+						<span class="mode-title">Normal</span>
+					</label>
+					<label class="mode-option">
+						<input type="radio" name="mode" value="easy">
+						<span class="mode-title">Easy</span>
+					</label>
+					<label class="mode-option">
+						<input type="radio" name="mode" value="zen">
+						<span class="mode-title">Zen</span>
+					</label>
+				</fieldset>
+				<button id="start-round" class="primary-button" type="button" disabled>Play.
+                </button>
+			</section>
+
+			<section id="game-panel" class="game-panel" aria-labelledby="question-label" hidden>
+				<div class="projection-screen question-screen">
+					<div class="game-toolbar">
+						<p id="active-mode" class="active-mode"></p>
+						<button id="change-mode" class="text-button" type="button">Main menu</button>
+					</div>
+					<div class="timer-row">
+						<span>Time remaining</span>
+						<strong id="timer" role="timer" aria-live="off">00:45</strong>
+					</div>
+					<div class="elimination-summary">
+						<p><strong id="field-count">12</strong> <span id="field-label">Mathletes remain</span></p>
+						<p id="matchup-label">You vs. Mathlete 02</p>
+					</div>
+					<div class="series-score">
+						<p id="series-label">Best of 3 · Question 1 of 3</p>
+						<p id="series-score">You 0 - 0</p>
+					</div>
+					<div class="question-heading">
+						<p id="question-category" class="question-category"></p>
+						<p id="question-number" class="question-number"></p>
+					</div>
+					<h2 id="question-label" class="question-text"></h2>
+					<p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+					<p id="bot-response" class="bot-response" role="status" aria-live="polite" hidden></p>
+					<p id="answer-text" class="answer-text" aria-live="polite" hidden></p>
+				</div>
+
+				<div class="answer-table">
+					<form id="answer-form" class="answer-form">
+						<label for="player-answer">Write your answer</label>
+						<div class="answer-entry">
+							<input id="player-answer" name="answer" type="text" autocomplete="off" required>
+							<button class="primary-button" type="submit">Submit answer</button>
+						</div>
+					</form>
+				</div>
+				<div class="table-legs" aria-hidden="true"><span></span><span></span></div>
+				<div class="controls">
+					<button id="restart-game" class="primary-button" type="button" hidden>Play again</button>
+				</div>
+			</section>
+
+			<div class="stage-floor" aria-hidden="true"></div>
+			<div class="audience" aria-hidden="true">
+				<div class="seat-row seat-row-back"></div>
+				<div class="seat-row seat-row-middle"></div>
+				<div class="seat-row seat-row-front"></div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
